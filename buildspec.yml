@@ -33,11 +33,10 @@ phases:
       - pip install -r requirements.txt
       # - command
   build:
-    commands:
+     commands:
       - echo "$DOCKER_PWD" | docker login -u "$DOCKER_USERNAME" --password-stdin "$DOCKER_URL"
-      - docker image build -t "pythonapp:latest" .
-      - docker image push "pythonapp:latest"
-      - docker logout
+      - docker image build -t "saikumar3115/pythonapp:latest" .
+      - docker image push "docker.io/saikumar3115/pythonapp:latest"
       # - command
   #post_build:
     #commands:
